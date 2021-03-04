@@ -1,0 +1,366 @@
+milligan@MacBook-Pro-Alisa amm % truffle migrate
+No local truffle config found. Using all defaults...
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+> Something went wrong while attempting to connect to the network. Check your network configuration.
+Invalid JSON RPC response: "Error: connect ECONNREFUSED 127.0.0.1:7545\n    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16)"
+Truffle v5.2.0 (core: 5.2.0)
+Node v14.15.5
+milligan@MacBook-Pro-Alisa amm % truffle migrate --network ropsten
+No local truffle config found. Using all defaults...
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+Migrations dry-run (simulation)
+===============================
+> Network name:    'ropsten-fork'
+> Network id:      3
+> Block gas limit: 8000029 (0x7a121d)
+
+
+01_initial_migration.js
+=======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > block number:        9773841
+   > block timestamp:     1614852690
+   > account:             0xD07289A6466f93639Fa5a88710054BEe753a7650
+   > balance:             0.999693428
+   > gas used:            153286 (0x256c6)
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000306572 ETH
+
+   -------------------------------------
+   > Total cost:         0.000306572 ETH
+
+
+02_deploy_math_lib.js
+=====================
+
+   Deploying 'Fixed192x64Math'
+   ---------------------------
+   > block number:        9773843
+   > block timestamp:     1614852699
+   > account:             0xD07289A6466f93639Fa5a88710054BEe753a7650
+   > balance:             0.998492832
+   > gas used:            573019 (0x8be5b)
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.001146038 ETH
+
+   -------------------------------------
+   > Total cost:         0.001146038 ETH
+
+
+03_deploy_ether_token.js
+========================
+
+   Deploying 'WETH9'
+   -----------------
+   > block number:        9773845
+   > block timestamp:     1614852719
+   > account:             0xD07289A6466f93639Fa5a88710054BEe753a7650
+   > balance:             0.997525428
+   > gas used:            456423 (0x6f6e7)
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000912846 ETH
+
+   -------------------------------------
+   > Total cost:         0.000912846 ETH
+
+
+04_deploy_whitelist.js
+======================
+
+   Deploying 'Whitelist'
+   ---------------------
+   > block number:        9773847
+   > block timestamp:     1614852733
+   > account:             0xD07289A6466f93639Fa5a88710054BEe753a7650
+   > balance:             0.99665076
+   > gas used:            410055 (0x641c7)
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00082011 ETH
+
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv   -------------------------------------
+   > Total cost:          0.00082011 ETH
+
+
+10_deploy_eventmanager_factory.js
+=================================
+
+   Deploying 'ConditionalTokens'
+   -----------------------------
+   > block number:        9773850
+   > block timestamp:     1614852787
+   > account:             0xD07289A6466f93639Fa5a88710054BEe753a7650
+   > balance:             0.989794762
+   > gas used:            3309882 (0x32813a)
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.006619764 ETH
+
+   -------------------------------------
+   > Total cost:         0.006619764 ETH
+
+
+11_deploy_market_factories.js
+=============================
+
+   Linking
+   -------
+   * Contract: LMSRMarketMakerFactory <--> Library: Fixed192x64Math 
+
+   Deploying 'LMSRMarketMakerFactory'
+   ----------------------------------
+   > block number:        9773852
+   > block timestamp:     1614852818
+   > account:             0xD07289A6466f93639Fa5a88710054BEe753a7650
+   > balance:             0.982472202
+   > gas used:            3634001 (0x377351)
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.007268002 ETH
+
+
+   Deploying 'FixedProductMarketMakerFactory'
+   ------------------------------------------
+   > block number:        9773853
+   > block timestamp:     1614852847
+   > account:             0xD07289A6466f93639Fa5a88710054BEe753a7650
+   > balance:             0.975043856
+   > gas used:            3714173 (0x38ac7d)
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.007428346 ETH
+
+
+   Deploying 'FPMMDeterministicFactory'
+   ------------------------------------
+   > block number:        9773854
+   > block timestamp:     1614852885
+   > account:             0xD07289A6466f93639Fa5a88710054BEe753a7650
+   > balance:             0.966714784
+   > gas used:            4164536 (0x3f8bb8)
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.008329072 ETH
+
+   -------------------------------------
+   > Total cost:          0.02302542 ETH
+
+
+Summary
+=======
+> Total deployments:   8
+> Final cost:          0.03283075 ETH
+
+
+
+
+
+Starting migrations...
+======================
+> Network name:    'ropsten'
+> Network id:      3
+> Block gas limit: 8000000 (0x7a1200)
+
+
+01_initial_migration.js
+=======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0xb5b7939c5d98c7248c56ba525d9e41549306bd6de09ffffcebd43eb90b94ae79
+   > Blocks: 1            Seconds: 41
+   > contract address:    0x91692A463677e4f2cFFB441F54BfEF5f0ef868a0
+   > block number:        9773856
+   > block timestamp:     1614852942
+   > account:             0xD07289A6466f93639Fa5a88710054BEe753a7650
+   > balance:             0.99663428
+   > gas used:            168286 (0x2915e)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00336572 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00336572 ETH
+
+
+02_deploy_math_lib.js
+=====================
+
+   Deploying 'Fixed192x64Math'
+   ---------------------------
+   > transaction hash:    0x01bcf174e7801e263c1ab70181c70b821c05fadaefcb87e8b7bbf8213951d621
+   > Blocks: 2            Seconds: 57
+   > contract address:    0x9206629F7B59a3BE74B72cbF662030e140b94d2a
+   > block number:        9773859
+   > block timestamp:     1614853002
+   > account:             0xD07289A6466f93639Fa5a88710054BEe753a7650
+   > balance:             1.98432832
+   > gas used:            573019 (0x8be5b)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.01146038 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.01146038 ETH
+
+
+03_deploy_ether_token.js
+========================
+
+   Deploying 'WETH9'
+   -----------------
+   > transaction hash:    0x18ca358d02a4b146ea88fb56ddbd6fdf22e6af9cfb260765d6229fbd322a524e
+   > Blocks: 1            Seconds: 12
+   > contract address:    0x0AB958aC7f6F184a17E84893E5f1cDb89C0acd74
+   > block number:        9773863
+   > block timestamp:     1614853094
+   > account:             0xD07289A6466f93639Fa5a88710054BEe753a7650
+   > balance:             6.97375428
+   > gas used:            501423 (0x7a6af)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.01002846 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.01002846 ETH
+
+
+04_deploy_whitelist.js
+======================
+
+   Deploying 'Whitelist'
+   ---------------------
+   > transaction hash:    0x4d995b1a0142f5449ae103dfc75bf6f75981273b47e8419fb6c337a759b28e0a
+   > Blocks: 6            Seconds: 192
+   > contract address:    0xb5E6a7fA5447041617f759DcF3064DAef69066E7
+   > block number:        9773871
+   > block timestamp:     1614853279
+   > account:             0xD07289A6466f93639Fa5a88710054BEe753a7650
+   > balance:             6.9647076
+   > gas used:            425055 (0x67c5f)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0085011 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:           0.0085011 ETH
+
+
+10_deploy_eventmanager_factory.js
+=================================
+
+   Deploying 'ConditionalTokens'
+   -----------------------------
+   > transaction hash:    0x9467ab8aff8a55e19ea62b25607f6db7115863ab11aba1858cd688025322c448
+   > Blocks: 2            Seconds: 76
+   > contract address:    0x20fd28F666C1c330982Fb87b940dCdD4AC35c082
+   > block number:        9773879
+   > block timestamp:     1614853495
+   > account:             0xD07289A6466f93639Fa5a88710054BEe753a7650
+   > balance:             6.89644894
+   > gas used:            3339882 (0x32f66a)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.06679764 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.06679764 ETH
+
+
+11_deploy_market_factories.js
+=============================
+
+   Linking
+   -------
+   * Contract: LMSRMarketMakerFactory <--> Library: Fixed192x64Math (at address: 0x9206629F7B59a3BE74B72cbF662030e140b94d2a)
+
+   Deploying 'LMSRMarketMakerFactory'
+   ----------------------------------
+   > transaction hash:    0xd53ed044efa0d5fbdbd30ef552ff115700c81be309f42e408d1c37f3b60370fe
+   > Blocks: 4            Seconds: 64
+   > contract address:    0xf1deD4B9769e887873930cda793851Dd92ea207D
+   > block number:        9773885
+   > block timestamp:     1614853637
+   > account:             0xD07289A6466f93639Fa5a88710054BEe753a7650
+   > balance:             6.82202334
+   > gas used:            3694001 (0x385db1)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.07388002 ETH
+
+
+   Deploying 'FixedProductMarketMakerFactory'
+   ------------------------------------------
+   > transaction hash:    0x7aeec0781364243dd0b90f08ad9c3ed3cd2df3dbc7a8a02b5e1d7107bd94839a
+   > Blocks: 1            Seconds: 16
+   > contract address:    0xa8169aB1e1D55EC190579cE451471db79daEC6f2
+   > block number:        9773887
+   > block timestamp:     1614853663
+   > account:             0xD07289A6466f93639Fa5a88710054BEe753a7650
+   > balance:             6.74683988
+   > gas used:            3759173 (0x395c45)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.07518346 ETH
+
+
+   Deploying 'FPMMDeterministicFactory'
+   ------------------------------------
+   > transaction hash:    0xe3d04039b8f099f6417739051e4f23fe8c0ccbc2d1e0a8ceea5ad29be62a989f
+   > Blocks: 1            Seconds: 16
+   > contract address:    0xfd8A5D8c789c089dA686c86b2D1336470DAa349B
+   > block number:        9773889
+   > block timestamp:     1614853695
+   > account:             0xD07289A6466f93639Fa5a88710054BEe753a7650
+   > balance:             6.66204916
+   > gas used:            4239536 (0x40b0b0)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.08479072 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:           0.2338542 ETH
+
+
+Summary
+=======
+> Total deployments:   8
+> Final cost:          0.3340075 ETH
+
+
+
+milligan@MacBook-Pro-Alisa amm %                                               
+
