@@ -7,24 +7,30 @@ const endpointUrl = "https://ropsten.infura.io/v3/c010ef4cc4754cfba5eba886a7508a
 
 const config = {
     networks: {
+        ropsten: {
+            provider: function() {
+              return new HDWalletProvider([privateKey], endpointUrl);
+            },
+            network_id: '3',
+          },
         mainnet: {
             host: "localhost",
             port: 8545,
             network_id: "1",
         },
-        ropsten: {
-            provider: function() {
-              return new HDWalletProvider(
-                //private keys array
-                [privateKey],
-                //url to ethereum node
-                endpointUrl
-              )
-            },
-            gas: 5000000,
-            gasPrice: 25000000000,
-            network_id: 3
-          },
+        // ropsten: {
+        //     provider: function() {
+        //       return new HDWalletProvider(
+        //         //private keys array
+        //         [privateKey],
+        //         //url to ethereum node
+        //         endpointUrl
+        //       )
+        //     },
+        //     gas: 5000000,
+        //     gasPrice: 25000000000,
+        //     network_id: 3
+        //   },
         rinkeby: {
             host: "localhost",
             port: 8545,
