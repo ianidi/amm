@@ -1,5 +1,5 @@
 pragma solidity >=0.5.1;
-import {SafeMath} from "openzeppelin-solidity/contracts/math/SafeMath.sol";
+import {SafeMath} from "@openzeppelin/contracts/math/SafeMath.sol";
 import {Fixed192x64Math} from "./Fixed192x64Math.sol";
 import {MarketMaker} from "./MarketMaker.sol";
 

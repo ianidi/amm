@@ -1,6 +1,6 @@
 pragma solidity >=0.5.1;
 
-import {IERC20} from "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
+import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {ConditionalTokens} from "./ConditionalTokens.sol";
 import {CTHelpers} from "./CTHelpers.sol";
 import {ConstructedCloneFactory} from "./ConstructedCloneFactory.sol";

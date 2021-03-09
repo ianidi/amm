@@ -1,7 +1,7 @@
 pragma solidity >=0.5.1;
 
-import {SafeMath} from "openzeppelin-solidity/contracts/math/SafeMath.sol";
-import {IERC20} from "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
+import {SafeMath} from "@openzeppelin/contracts/math/SafeMath.sol";
+import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {ConditionalTokens} from "./ConditionalTokens.sol";
 import {CTHelpers} from "./CTHelpers.sol";
 import {ERC1155TokenReceiver} from "./ERC1155/ERC1155TokenReceiver.sol";

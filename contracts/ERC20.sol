@@ -1,8 +1,8 @@
 // This is a backported hooked OpenZeppelin ERC 20 implementation
 pragma solidity >=0.5.0;
 
-import {IERC20} from "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
-import {SafeMath} from "openzeppelin-solidity/contracts/math/SafeMath.sol";
+import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import {SafeMath} from "@openzeppelin/contracts/math/SafeMath.sol";
 
 /**
  * @dev Implementation of the {IERC20} interface.
@@ -37,81 +37,81 @@ contract ERC20 is IERC20 {
 
     uint256 private _totalSupply;
 
-    /**
-     * @dev See {IERC20-totalSupply}.
-     */
-    function totalSupply() public view returns (uint256) {
-        return _totalSupply;
-    }
+    // /**
+    //  * @dev See {IERC20-totalSupply}.
+    //  */
+    // function totalSupply() public view returns (uint256) {
+    //     return _totalSupply;
+    // }
 
-    /**
-     * @dev See {IERC20-balanceOf}.
-     */
-    function balanceOf(address account) public view returns (uint256) {
-        return _balances[account];
-    }
+    // /**
+    //  * @dev See {IERC20-balanceOf}.
+    //  */
+    // function balanceOf(address account) public view returns (uint256) {
+    //     return _balances[account];
+    // }
 
-    /**
-     * @dev See {IERC20-transfer}.
-     *
-     * Requirements:
-     *
-     * - `recipient` cannot be the zero address.
-     * - the caller must have a balance of at least `amount`.
-     */
-    function transfer(address recipient, uint256 amount) public returns (bool) {
-        _transfer(msg.sender, recipient, amount);
-        return true;
-    }
+    // /**
+    //  * @dev See {IERC20-transfer}.
+    //  *
+    //  * Requirements:
+    //  *
+    //  * - `recipient` cannot be the zero address.
+    //  * - the caller must have a balance of at least `amount`.
+    //  */
+    // function transfer(address recipient, uint256 amount) public returns (bool) {
+    //     _transfer(msg.sender, recipient, amount);
+    //     return true;
+    // }
 
-    /**
-     * @dev See {IERC20-allowance}.
-     */
-    function allowance(address owner, address spender)
-        public
-        view
-        returns (uint256)
-    {
-        return _allowances[owner][spender];
-    }
+    // /**
+    //  * @dev See {IERC20-allowance}.
+    //  */
+    // function allowance(address owner, address spender)
+    //     public
+    //     view
+    //     returns (uint256)
+    // {
+    //     return _allowances[owner][spender];
+    // }
 
-    /**
-     * @dev See {IERC20-approve}.
-     *
-     * Requirements:
-     *
-     * - `spender` cannot be the zero address.
-     */
-    function approve(address spender, uint256 amount) public returns (bool) {
-        _approve(msg.sender, spender, amount);
-        return true;
-    }
+    // /**
+    //  * @dev See {IERC20-approve}.
+    //  *
+    //  * Requirements:
+    //  *
+    //  * - `spender` cannot be the zero address.
+    //  */
+    // function approve(address spender, uint256 amount) public returns (bool) {
+    //     _approve(msg.sender, spender, amount);
+    //     return true;
+    // }
 
-    /**
-     * @dev See {IERC20-transferFrom}.
-     *
-     * Emits an {Approval} event indicating the updated allowance. This is not
-     * required by the EIP. See the note at the beginning of {ERC20};
-     *
-     * Requirements:
-     * - `sender` and `recipient` cannot be the zero address.
-     * - `sender` must have a balance of at least `amount`.
-     * - the caller must have allowance for `sender`'s tokens of at least
-     * `amount`.
-     */
-    function transferFrom(
-        address sender,
-        address recipient,
-        uint256 amount
-    ) public returns (bool) {
-        _transfer(sender, recipient, amount);
-        _approve(
-            sender,
-            msg.sender,
-            _allowances[sender][msg.sender].sub(amount)
-        );
-        return true;
-    }
+    // /**
+    //  * @dev See {IERC20-transferFrom}.
+    //  *
+    //  * Emits an {Approval} event indicating the updated allowance. This is not
+    //  * required by the EIP. See the note at the beginning of {ERC20};
+    //  *
+    //  * Requirements:
+    //  * - `sender` and `recipient` cannot be the zero address.
+    //  * - `sender` must have a balance of at least `amount`.
+    //  * - the caller must have allowance for `sender`'s tokens of at least
+    //  * `amount`.
+    //  */
+    // function transferFrom(
+    //     address sender,
+    //     address recipient,
+    //     uint256 amount
+    // ) public returns (bool) {
+    //     _transfer(sender, recipient, amount);
+    //     _approve(
+    //         sender,
+    //         msg.sender,
+    //         _allowances[sender][msg.sender].sub(amount)
+    //     );
+    //     return true;
+    // }
 
     /**
      * @dev Atomically increases the allowance granted to `spender` by the caller.
