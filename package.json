@@ -25,6 +25,7 @@
   "author": "Gnosis (https://gnosis.io)",
   "license": "LGPL-3.0",
   "dependencies": {
+    "@chainlink/contracts": "^0.1.6",
     "@gnosis.pm/conditional-tokens-contracts": "^1.0.1",
     "@gnosis.pm/util-contracts": "^3.0.0-alpha.3",
     "@truffle/hdwallet-provider": "^1.0.18",

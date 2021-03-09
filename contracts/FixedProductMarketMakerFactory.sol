@@ -1,5 +1,6 @@
-pragma solidity ^0.5.1;
+pragma solidity >=0.5.1;
 
+import "@chainlink/contracts/src/v0.6/interfaces/AggregatorV3Interface.sol";
 import {IERC20} from "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
 import {ConditionalTokens} from "./ConditionalTokens.sol";
 import {CTHelpers} from "./CTHelpers.sol";
@@ -24,9 +25,27 @@ contract FixedProductMarketMakerFactory is
     );
 
     FixedProductMarketMaker public implementationMaster;
+    AggregatorV3Interface internal priceFeed;
 
     constructor() public {
         implementationMaster = new FixedProductMarketMaker();
+        priceFeed = AggregatorV3Interface(
+            0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c
+        );
+    }
+
+    /**
+     * Returns the latest price
+     */
+    function getLatestPrice() public view returns (int256) {
+        (
+            uint80 roundID,
+            int256 price,
+            uint256 startedAt,
+            uint256 timeStamp,
+            uint80 answeredInRound
+        ) = priceFeed.latestRoundData();
+        return price;
     }
 
     function cloneConstructor(bytes calldata consData) external {

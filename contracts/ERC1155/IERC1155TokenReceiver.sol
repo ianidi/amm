@@ -1,4 +1,4 @@
-pragma solidity ^0.5.0;
+pragma solidity >=0.5.0;
 
 import "openzeppelin-solidity/contracts/introspection/IERC165.sol";
 
@@ -7,7 +7,6 @@ import "openzeppelin-solidity/contracts/introspection/IERC165.sol";
     @dev See https://eips.ethereum.org/EIPS/eip-1155
 */
 contract IERC1155TokenReceiver is IERC165 {
-
     /**
         @dev Handles the receipt of a single ERC1155 token type. This function is
         called at the end of a `safeTransferFrom` after the balance has been updated.
@@ -27,9 +26,7 @@ contract IERC1155TokenReceiver is IERC165 {
         uint256 id,
         uint256 value,
         bytes calldata data
-    )
-        external
-        returns(bytes4);
+    ) external returns (bytes4);
 
     /**
         @dev Handles the receipt of a multiple ERC1155 token types. This function
@@ -50,7 +47,5 @@ contract IERC1155TokenReceiver is IERC165 {
         uint256[] calldata ids,
         uint256[] calldata values,
         bytes calldata data
-    )
-        external
-        returns(bytes4);
+    ) external returns (bytes4);
 }
