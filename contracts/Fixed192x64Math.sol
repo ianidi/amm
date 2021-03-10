@@ -1,4 +1,4 @@
-pragma solidity >=0.5.1;
+pragma solidity ^0.5.0;
 
 /// @title Fixed192x64Math library - Allows calculation of logarithmic and exponential functions
 /// @author Alan Lu - <alan.lu@gnosis.pm>

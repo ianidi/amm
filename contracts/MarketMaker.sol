@@ -1,5 +1,5 @@
-pragma solidity >=0.5.1;
-import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
+pragma solidity ^0.5.0;
+import {Ownable} from "@openzeppelin/contracts/ownership/Ownable.sol";
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {SafeMath} from "@openzeppelin/contracts/math/SafeMath.sol";
 import {SignedSafeMath} from "./SignedSafeMath.sol";

@@ -1,4 +1,4 @@
-pragma solidity >=0.5.1;
+pragma solidity ^0.5.0;
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {ERC1155} from "./ERC1155/ERC1155.sol";
 import {CTHelpers} from "./CTHelpers.sol";

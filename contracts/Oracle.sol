@@ -1,4 +1,4 @@
-pragma solidity >=0.5.1;
+pragma solidity ^0.5.0;
 
 interface IConditionalTokens {
     function reportPayouts(bytes32 questionId, uint256[] calldata payouts)
