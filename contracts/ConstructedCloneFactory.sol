@@ -1,4 +1,4 @@
-pragma solidity >^.5.0;
+pragma solidity ^0.5.0;
 
 contract ConstructedCloneFactory {
     event CloneCreated(address indexed target, address clone);
