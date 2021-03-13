@@ -21,7 +21,11 @@ contract FixedProductMarketMakerFactory is
         ConditionalTokens indexed conditionalTokens,
         IERC20 indexed collateralToken,
         bytes32[] conditionIds,
-        uint256 fee
+        uint256 fee,
+        int256 initialPrice,
+        uint256 created,
+        uint256 duration,
+        int256 baseCurrency
     );
 
     FixedProductMarketMaker public implementationMaster;
@@ -29,22 +33,19 @@ contract FixedProductMarketMakerFactory is
 
     constructor() public {
         implementationMaster = new FixedProductMarketMaker();
-        priceFeed = AggregatorV3Interface(
-            0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c
-        );
     }
 
     /**
      * Returns the latest price
      */
-    function getLatestPrice() public view returns (int256) {
+    function getLatestPrice(AggregatorV3Interface feed) public view returns (int256) {
         (
             uint80 roundID,
             int256 price,
             uint256 startedAt,
             uint256 timeStamp,
             uint80 answeredInRound
-        ) = priceFeed.latestRoundData();
+        ) = feed.latestRoundData();
         return price;
     }
 
@@ -53,11 +54,15 @@ contract FixedProductMarketMakerFactory is
             ConditionalTokens _conditionalTokens,
             IERC20 _collateralToken,
             bytes32[] memory _conditionIds,
-            uint256 _fee
+            uint256 _fee,
+            int256 _initialPrice,
+            uint256 _created,
+            uint256 _duration,
+            int256 _baseCurrency
         ) =
             abi.decode(
                 consData,
-                (ConditionalTokens, IERC20, bytes32[], uint256)
+                (ConditionalTokens, IERC20, bytes32[], uint256, int256, uint256, uint256, int256)
             );
 
         _supportedInterfaces[_INTERFACE_ID_ERC165] = true;
@@ -70,6 +75,10 @@ contract FixedProductMarketMakerFactory is
         collateralToken = _collateralToken;
         conditionIds = _conditionIds;
         fee = _fee;
+        initialPrice = _initialPrice;
+        created = _created;
+        duration = _duration;
+        baseCurrency = _baseCurrency;
 
         uint256 atomicOutcomeSlotCount = 1;
         outcomeSlotCounts = new uint256[](conditionIds.length);
@@ -121,8 +130,20 @@ contract FixedProductMarketMakerFactory is
         ConditionalTokens conditionalTokens,
         IERC20 collateralToken,
         bytes32[] calldata conditionIds,
-        uint256 fee
+        uint256 fee,
+        uint256 duration,
+        int256 baseCurrency
     ) external returns (FixedProductMarketMaker) {
+
+        uint256 created;
+        int256 initialPrice;
+        //////////////////////////////////////////////////// 
+        initialPrice = getLatestPrice(AggregatorV3Interface(
+            0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c
+        ));
+
+        created = now;
+
         FixedProductMarketMaker fixedProductMarketMaker =
             FixedProductMarketMaker(
                 createClone(
@@ -131,7 +152,11 @@ contract FixedProductMarketMakerFactory is
                         conditionalTokens,
                         collateralToken,
                         conditionIds,
-                        fee
+                        fee,
+                        initialPrice,
+                        created,
+                        duration,
+                        baseCurrency
                     )
                 )
             );
@@ -141,7 +166,11 @@ contract FixedProductMarketMakerFactory is
             conditionalTokens,
             collateralToken,
             conditionIds,
-            fee
+            fee,
+            initialPrice,
+            created,
+            duration,
+            baseCurrency
         );
         return fixedProductMarketMaker;
     }

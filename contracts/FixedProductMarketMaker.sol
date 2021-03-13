@@ -52,6 +52,10 @@ contract FixedProductMarketMaker is ERC20, ERC1155TokenReceiver {
     bytes32[] public conditionIds;
     uint256 public fee;
     uint256 internal feePoolWeight;
+    int256 public initialPrice;
+    uint256 public created;
+    uint256 public duration;
+    int256 public baseCurrency;
 
     uint256[] outcomeSlotCounts;
     bytes32[][] collectionIds;
@@ -487,6 +491,10 @@ contract FixedProductMarketMakerData {
     bytes32[] internal conditionIds;
     uint256 internal fee;
     uint256 internal feePoolWeight;
+    int256 internal initialPrice;
+    uint256 internal created;
+    uint256 internal duration;
+    int256 internal baseCurrency;
 
     uint256[] internal outcomeSlotCounts;
     bytes32[][] internal collectionIds;
